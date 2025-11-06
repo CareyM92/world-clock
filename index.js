@@ -11,6 +11,18 @@ function updateTimes() {
     );
   }
 
+  let parisElement = document.querySelector("#paris");
+  if (parisElement) {
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    let parisTime = moment().tz("Europe/Paris");
+
+    parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
   let sydneyElement = document.querySelector("#sydney");
   if (sydneyElement) {
     let sydneyDateElement = sydneyElement.querySelector(".date");
@@ -42,6 +54,7 @@ function updateCity(event) {
     "A"
   )}</small></div>
   </div>
+   <a href="/" class="backLink">🔙</a>
   `;
 }
 
