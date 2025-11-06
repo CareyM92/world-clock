@@ -1,11 +1,30 @@
 body {
-  background-color: #f9f7fe;
   font-family: Arial, sans-serif;
+
+  background-image: url("images/world-map.png");
+  background-size: cover; /* makes it fill the screen */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: rgb(24, 24, 24); /* better contrast against the map */
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* adjust alpha for transparency */
+  z-index: -1;
 }
 
 h1 {
   font-size: 36px;
-  font-family: sans-serif;
+  font-family: "Quando", serifsans-serif;
   text-align: center;
 }
 
@@ -29,6 +48,7 @@ select {
   padding: 30px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
+  opacity: 80%;
 }
 
 .city {
@@ -44,7 +64,9 @@ select {
 }
 
 .date {
-  opacity: 0.7;
+  opacity: 0.9;
+  font-family: "Quando", serifsans-serif;
+  font-size: 14px;
 }
 
 .time {
@@ -58,9 +80,15 @@ select {
   line-height: 48px;
 }
 
+.backLink {
+  font-size: 30px;
+  text-decoration: none;
+}
+
 footer {
   text-align: center;
-  font-size: 18px;
+  font-family: "Quando", serifsans-serif;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
 }
 
